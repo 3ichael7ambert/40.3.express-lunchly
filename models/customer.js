@@ -76,8 +76,16 @@ class Customer {
              WHERE id=$5`,
         [this.firstName, this.lastName, this.phone, this.notes, this.id]
       );
-    }
+    }  
   }
+
+
+  /** get the full name of the customer. */
+    fullName() {
+      return `${this.firstName} ${this.lastName}`;
+    }
+
+
 }
 
 module.exports = Customer;
