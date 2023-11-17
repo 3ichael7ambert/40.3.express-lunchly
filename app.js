@@ -7,6 +7,8 @@ const routes = require("./routes");
 
 const app = express();
 
+const PORT = 3000;
+
 // Parse body for urlencoded (non-JSON) data
 app.use(bodyParser.urlencoded({ extended: false }));
 
@@ -36,3 +38,7 @@ app.use((err, req, res, next) => {
 });
 
 module.exports = app;
+
+app.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}`);
+});
